@@ -1,0 +1,317 @@
+/* Start Variables */
+:root {
+    /* (sub-heading at the top of the app UI) */
+    --pale-violet: hsl(276, 100%, 81%);
+    /* (chat on the left) */
+    --moderate-violet : hsl(276, 55%, 52%);
+    /*  (chat on the right) */
+    --dd-violet: hsl(271, 15%, 43%);
+    /* (placeholder text) */
+    --grayash-blue: hsl(206, 6%, 79%);
+    /* (main heading) */
+    --vdd-violet : hsl(271, 36%, 24%);
+    /* (paragraph) */
+    --dgrayash-violet: hsl(270, 7%, 64%);
+    --grad-from: hsl(293, 100%, 63%);
+    --grad-to: hsl(264, 100%, 61%);
+    --white: hsl(0, 0%, 100%);
+    /* (app background) */
+    --lgrayash-violet : hsl(270, 20%, 96%);
+    /* (submit button background) */
+    --vdd-violet : hsl(271, 36%, 24%);
+    /* (radio button outline) */
+    --vl-magneta: hsl(289, 100%, 72%);
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:focus {
+    outline: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+}
+button,
+i {
+    cursor: pointer;
+    transition: .3s;
+}
+button:hover {
+    transform: translateY(-10px);
+}
+ul {
+    list-style: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End Global Rules */
+/* Start Main */
+.main {
+padding: 20px 0;
+overflow: hidden;
+}
+.main .container {
+    position: relative;
+}
+.main .container::before {
+    position: absolute;
+    content: '';
+    width: 400px;
+    height: 800px;
+    background-color: #f5f4f4;
+    bottom: -250px;
+    right: -300px;
+    border-radius: 200px;
+    z-index: -2;
+}
+.main .container::after {
+    position: absolute;
+    content: '';
+    width: 400px;
+    height: 800px;
+    background-image: linear-gradient(var(--grad-from),var(--grad-to));
+    top: -250px;
+    left: -185px;
+    border-radius: 200px;
+    z-index: -1;
+}
+.main .container {
+    display: flex;
+    justify-content: space-evenly;
+}
+.main .container .mobile-content {
+    background-color: white;
+    flex-basis: 35%;
+    padding: 15px;
+    border-radius: 40px;
+    width: 340px;
+    min-width: 340px;
+    border: 1px solid #ddd;
+}
+.main .container .text {
+    flex-basis: 36%;
+}
+.main .container .mobile .contact {
+    display: flex;
+    padding: 50px 10px 20px;
+    margin-bottom: 10px;
+    background-image: linear-gradient(var(--grad-from),var(--grad-to));
+    border-radius: 40px 40px 10px 10px;
+    position: relative;
+    overflow: hidden;
+}
+.main .container .mobile .contact::before {
+    position: absolute;
+    content: '';
+    top: -17px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40px;
+    width: 60%;
+    border-radius: 20px;
+    background-color: white;
+}
+.main .container .mobile .contact img:nth-child(1) {
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    transform: rotate(180deg);
+    margin-right: 10px;
+}
+.main .container .mobile .contact img:nth-child(2) {
+    width: 45px;
+    border-radius: 50%;
+    align-self: center;
+    margin-right: 10px;
+}
+.main .container .mobile .contact .info h2 {
+    color: white;
+    letter-spacing: 0.5px;
+    font-size: 15px;
+    margin: 2px 0 6px 0;
+}
+.main .container .mobile .contact .info p {
+    color: var(--dgrayash-violet);
+}
+.main .mobile-content .mobile .conversation {
+    background-color: var(--lgrayash-violet);
+    display: flex;
+    flex-direction: column;
+}
+.main .mobile-content .mobile .conversation > p {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 60%;
+}
+.main .mobile-content .mobile .conversation p.action {
+    color: var(--moderate-violet);
+    background-color: #ddd;
+    border-radius: 20px 20px 10px 5px;
+    margin-left: 5px;
+}
+.main .mobile-content .mobile .conversation p.reaction {
+    color: var(--dd-violet);
+    justify-self: right;
+    background-color: white;
+    border-radius: 20px 20px 5px 10px;
+    align-self: flex-end;
+    text-align: right;
+    margin-right: 5px;
+}
+body > div > div > div.mobile-content > div > div.conversation > p:nth-child(3) {
+    background-color: transparent !important;
+    width: 100% !important;
+}
+body > div > div > div.mobile-content > div > div.conversation > p:nth-child(3) img {
+    width: 50px;
+    border-radius: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.main .mobile-content .mobile .conversation .price > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 10px 5px;
+    padding: 12px;
+    background-image: linear-gradient(var(--grad-from),var(--grad-to));
+    width: 70%;
+    color: var(--grayash-blue);
+    border-radius: 20px 20px 20px 5px;
+}
+.main .mobile-content .mobile .conversation .price > div > span {
+    color: white;
+    font-size: 20px;
+}
+.main .mobile-content .mobile .conversation .price > div > input {
+    appearance: none;
+    position: relative;
+    width: 30px;
+}
+.main .mobile-content .mobile .conversation .price > div > input:before {
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    border: 1px solid var(--vl-magneta);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.main .container .mobile .contact .bullets {
+    align-self: center;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    width: 30px;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.main .container .mobile .contact .bullets:hover {
+    border-radius: 50%;
+    background-color: rgba(221, 221, 221, 0.219);
+}
+.main .container .mobile .contact .bullets span {
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 1px 0;
+}
+.main .container .mobile .response {
+    margin: 10px 0;
+    position: relative;
+    background-color: var(--lgrayash-violet);
+}
+.main .container .mobile .response input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 40px;
+    border: 1px solid rgb(156, 156, 156);
+}
+.main .container .mobile .response input::placeholder {
+    color: var(--grayash-blue);
+}
+.main .container .mobile .response img {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    cursor: pointer;
+}
+.main .container .text {
+    align-self: center;
+    margin-top: -80px;
+}
+.main .container .text h2 {
+    color: var(--vdd-violet);
+    font-size: 35px;
+}
+.main .container .text p {
+    margin-top: 20px;
+    line-height: 1.6;
+    color: var(--dgrayash-violet);
+}
+@media (max-width:991px) {
+    .main .container::before {
+        display: none;
+    }
+    .main .container {
+        flex-direction: column;
+    }
+    .main .container .mobile-content {
+        margin-bottom: 20px;
+    }
+    .main .container .text {
+        width: 400px;
+        margin-top: 0;
+        text-align: center;
+    }
+    .main .container .text p {
+        width: 71%;
+        margin: 15px auto;
+    }
+    .main .container .mobile .contact {
+        padding-top: 40px;
+    }
+}
+/* End Main */
